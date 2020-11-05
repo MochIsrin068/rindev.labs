@@ -1,0 +1,46 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700);
+
+$open-sans: 'Open Sans', sans-serif;
+
+:root {
+    font-size: 16px;
+    font-family: $open-sans;
+    --text-primary: #b6b6b6;
+    --text-secondary: #ececec;
+    --bg-primary: #23232e;
+    --bg-secondary: #141418;
+    --transition-speed: 600ms;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: $open-sans;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.item-loader, .item-empty{
+    margin-top: 40px;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-loader, .item-empty{
+    position: absolute;
+    top: 15%;
+    left: 25%;
+    right: 25%;
+
+    >svg{
+        size: 60px;
+
+        @include phone{
+            size: 40px;
+        }
+    }
+}

@@ -1,0 +1,61 @@
+@import './header';
+@import './footer';
+
+main{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.layout-dark{
+    background-color: #000;
+}
+
+#scrollUpButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #3a67c1;
+    background-color: #fff;
+    position: fixed;
+    bottom: 52px;
+    right: 28px;
+    z-index: 99;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    padding: 4px;
+    box-shadow: 1px 1px 14px #3a67c1;
+
+    >svg{
+        height: 20px;
+        width: 20px;
+        fill: #3a67c1;
+    }
+}
+
+#scrollUpButtonDark{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #fb8801;
+    background-color: #000;
+    position: fixed;
+    bottom: 52px;
+    right: 28px;
+    z-index: 99;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    padding: 4px;
+    box-shadow: 1px 1px 14px #fb8801;
+
+    >svg{
+        fill: #fb8801;
+        height: 20px;
+        width: 20px;
+    }
+}

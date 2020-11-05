@@ -1,0 +1,186 @@
+.work{
+    // height: 100vh;
+    background-color:#fff;
+    padding: 114px 120px;
+    display: flex;
+    flex-direction: column;
+    
+    *{
+        color: #707070; 
+    }
+    
+    @include phone{
+        padding: 90px 20px;
+    }
+
+    >p{
+        margin-bottom: 16px;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    &__list{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        overflow-wrap: break-word;
+        margin-bottom: 32px;
+        
+        @include phone{
+            grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+        }
+
+        &__card{
+            cursor: pointer;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            display: flex;
+            flex-direction: column;
+            padding: 16px;
+            justify-content: space-between;
+            text-decoration: none;
+            
+            *{
+                color: #707070;
+            }
+            
+            >section{
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+
+                >img{
+                    border-radius: 4px;
+                    width: 100%;
+                }
+                
+                >h3{
+                    font-weight: 600;
+                    font-size: 16px;
+                }
+                
+                >p{
+                    margin-top: 6px;
+                    display: flex;
+                    text-align: justify;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3; /* number of lines to show */
+                    -webkit-box-orient: vertical;
+                    font-size: 14px;
+                }
+
+                >div{
+                    margin-top: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    >a{
+                        margin: 0 6px;
+                    }
+                }
+            }
+            
+            &:hover{
+                border: 1px solid #69c7fe;
+            }
+        }
+    }
+
+
+    &__list-more{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+        gap: 1.5rem;
+        overflow-wrap: break-word;
+        margin-bottom: 32px;
+        
+        &__link{
+            cursor: pointer;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            flex-direction: column;
+            padding: 16px 0;
+            justify-content: space-between;
+            text-decoration: none;
+            
+            *{
+                color: #707070;
+            }
+            
+            >section{
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+
+                >img{
+                    border-radius: 4px;
+                    width: 100%;
+                }
+                
+                >h3{
+                    font-weight: 600;
+                    font-size: 16px;
+                }
+                
+                >p{
+                    margin-top: 6px;
+                    display: flex;
+                    text-align: justify;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3; /* number of lines to show */
+                    -webkit-box-orient: vertical;
+                    font-size: 14px;
+                }
+
+                >div{
+                    margin-top: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    >a{
+                        margin: 0 6px;
+                    }
+                }
+            }
+            
+            &:hover{
+                border-bottom: 1px solid #69c7fe;
+            }
+        }
+
+        &__link:nth-child(1){
+            border-top: 1px solid #ddd;
+        }
+    }
+    
+}
+
+.work-dark{
+    background-color: #000;
+    *{
+        // color: #fff;
+        color: #ddd;
+    }
+
+    .work__list__card{
+        background-color: #000 !important;
+        border: 1px solid #fdb441 !important;
+    }
+    
+    .work__list-more__link{
+        background-color: #000 !important;
+        border: none;
+        border-bottom: 1px solid #fdb441 !important;
+    }
+
+    .work__list-more__link:nth-child(1){
+        border-top: 1px solid #fdb441 !important;
+    }
+}
