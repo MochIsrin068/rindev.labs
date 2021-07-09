@@ -51,7 +51,7 @@ const Home = () => {
 							</Fade>
 							<Fade left>
 								<div className='twitter-embed-container'>
-									<TwitterFollowButton screenName={'IsrimBaso'} options={{ size: 'large' }} />
+									<TwitterFollowButton screenName={'is_rin98'} options={{ size: 'large' }} />
 								</div>
 							</Fade>
 						</div>

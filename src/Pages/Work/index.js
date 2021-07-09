@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useContext, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import Layout from '../../Layout'
 import { ThemeContext } from '../../Context/ThemeContext'
@@ -8,7 +8,6 @@ import 'firebase/database'
 import { FirebaseDatabaseProvider, FirebaseDatabaseNode } from '@react-firebase/database'
 import { config } from '../../Config'
 import { HashLoader } from 'react-spinners'
-import { AiOutlineGithub, AiOutlineEye } from 'react-icons/ai'
 import Fade from 'react-reveal/Fade'
 import { ReactComponent as IconArrowUp } from '../../Assets/Icons/up-arrow2.svg'
 
@@ -17,6 +16,7 @@ const Work = () => {
 	const themeCLassSelected = themeContext.mode === TYPE.DARKMODE ? 'work-dark' : null
 	const [isLoadingFeature, setIsLoadingFeature] = useState(true)
 	const [isLoadingMore, setIsLoadingMore] = useState(true)
+	const [scrollTop, setScrollTop] = useState(0)
 
 	window.onscroll = () => {
 		if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -32,6 +32,10 @@ const Work = () => {
 		document.body.scrollTop = 0
 		document.documentElement.scrollTop = 0
 	}
+
+    window.addEventListener('scroll', () => {
+        setScrollTop(window.scrollY)
+    })
 
 	return (
 		<>
@@ -130,15 +134,17 @@ const Work = () => {
 				</FirebaseDatabaseProvider>
 			</Layout>
 
-			{themeContext.mode === TYPE.DARKMODE ? (
-				<div id='scrollUpButtonDark' onClick={() => scrollToTop()}>
-					<IconArrowUp />
-				</div>
-			) : (
-				<div id='scrollUpButton' onClick={() => scrollToTop()}>
-					<IconArrowUp />
-				</div>
-			)}
+			{scrollTop == 0 ? null : 
+                themeContext.mode === TYPE.DARKMODE ? (
+					<div id='scrollUpButtonDark' onClick={() => scrollToTop()}>
+						<IconArrowUp />
+					</div>
+				) : (
+					<div id='scrollUpButton' onClick={() => scrollToTop()}>
+						<IconArrowUp />
+					</div>
+				)
+            }
 		</>
 	)
 }
