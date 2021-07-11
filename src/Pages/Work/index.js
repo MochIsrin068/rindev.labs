@@ -16,7 +16,6 @@ const Work = () => {
 	const themeCLassSelected = themeContext.mode === TYPE.DARKMODE ? 'work-dark' : null
 	const [isLoadingFeature, setIsLoadingFeature] = useState(true)
 	const [isLoadingMore, setIsLoadingMore] = useState(true)
-	const [scrollTop, setScrollTop] = useState(0)
 
 	window.onscroll = () => {
 		if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -27,15 +26,6 @@ const Work = () => {
 			document.getElementById('scrollUpButtonDark').style.display = 'none'
 		}
 	}
-
-	const scrollToTop = () => {
-		document.body.scrollTop = 0
-		document.documentElement.scrollTop = 0
-	}
-
-    window.addEventListener('scroll', () => {
-        setScrollTop(window.scrollY)
-    })
 
 	return (
 		<>
@@ -134,8 +124,7 @@ const Work = () => {
 				</FirebaseDatabaseProvider>
 			</Layout>
 
-			{scrollTop == 0 ? null : 
-                themeContext.mode === TYPE.DARKMODE ? (
+			{themeContext.mode === TYPE.DARKMODE ? (
 					<div id='scrollUpButtonDark' onClick={() => scrollToTop()}>
 						<IconArrowUp />
 					</div>
