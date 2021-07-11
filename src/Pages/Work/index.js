@@ -27,6 +27,11 @@ const Work = () => {
 		}
 	}
 
+	const scrollToTop = () => {
+		document.body.scrollTop = 0
+		document.documentElement.scrollTop = 0
+	}
+
 	return (
 		<>
 			<Helmet>
@@ -124,7 +129,8 @@ const Work = () => {
 				</FirebaseDatabaseProvider>
 			</Layout>
 
-			{themeContext.mode === TYPE.DARKMODE ? (
+			{
+                themeContext.mode === TYPE.DARKMODE ? (
 					<div id='scrollUpButtonDark' onClick={() => scrollToTop()}>
 						<IconArrowUp />
 					</div>
